@@ -7,10 +7,10 @@ import CostList from "./CostList";
 import CostDiagram from "./CostDiagram";
 
 const Costs = ({ add }) => {
-  const [inputyear, setinputYear] = useState("2021");
-  const filtered = add.filter(
-    (b) => b.date.getFullYear() === Number(inputyear)
-  );
+  const [inputyear, setinputYear] = useState("2023");
+  const filtered = add.filter((b) => {
+    return new Date(b.date).getFullYear().toString() === inputyear;
+  });
 
   const yearChangeHandler = (year) => {
     setinputYear(year);

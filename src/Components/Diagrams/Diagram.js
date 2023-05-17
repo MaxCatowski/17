@@ -4,12 +4,13 @@ import "./Diagram.css";
 
 const Diagram = (props) => {
   const dataSetsValue = props.dataSets.map((data) => data.value);
+
   const maxMathCosts = Math.max(...dataSetsValue);
   return (
     <div className="diagram">
       {props.dataSets.map((dataSet) => (
         <DiagramBar
-          key={dataSet.id}
+          key={dataSet.label}
           value={dataSet.value}
           maxValue={maxMathCosts}
           label={dataSet.label}

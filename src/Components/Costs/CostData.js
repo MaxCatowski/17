@@ -1,9 +1,9 @@
 import React from "react";
 
 const CostData = ({ date }) => {
-  const month = date.toLocaleString("ru-Ru", { month: "long" });
-  const year = date.getFullYear();
-  const day = date.toLocaleString("ru-Ru", { day: "2-digit" });
+  const month = new Date(date).toLocaleString("ru-Ru", { month: "long" });
+  const year = new Date(date).getFullYear();
+  const day = new Date(date).toLocaleString("ru-Ru", { day: "2-digit" });
 
   return (
     <div className="cost-date">
